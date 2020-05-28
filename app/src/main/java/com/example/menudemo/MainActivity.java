@@ -8,9 +8,11 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    TextView text;
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater=getMenuInflater();
@@ -24,10 +26,10 @@ public class MainActivity extends AppCompatActivity {
 
         switch(item.getItemId()){
             case R.id.settings:
-                Log.i("Item Selected : ","Settings");
+                text.setText("Settings");
                 return true;
             case R.id.help:
-                Log.i("Item Selected : ","help");
+                text.setText("Help");
                 return true;
             default:
                 return false;
@@ -38,5 +40,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        text=findViewById(R.id.text_view);
     }
 }
